@@ -1,0 +1,54 @@
+//Array Declaration:
+
+
+int a[];
+a=new int[3];
+a[0]=10;
+a[1]=10;
+a[2]=10;
+
+///
+
+
+int a[]={1,2,3};
+
+
+An array is a collection of items of same data type stored at contiguous memory locations. 
+
+// to insert a value= 10 at index position 2;
+
+arr[ 2 ] = 10;
+
+Time Complexity: 
+
+O(1) to insert a single element
+O(n) to insert all the array elements [where n is the size of the array]
+
+
+-----
+// to access array element at index position 2, we simply can write
+
+return arr[ 2 ] ;
+
+Time Complexity: O(1)
+
+------
+
+
+
+
+//
+
+
+public class Test{
+    public static void main(String args[]){
+        int a[]={1,2,3,4};
+        
+        //a.length to find the length of the array
+        
+        System.out.println(a.length);
+
+        // To get the element 
+         System.out.println(a[1]);
+    }
+}
