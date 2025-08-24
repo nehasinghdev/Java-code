@@ -1,0 +1,27 @@
+/need to understand 
+
+
+// Program to demonstrate 2-D jagged array in Java
+class GfG {
+    public static void main(String[] args) {
+        int m = 3;
+
+        // Declaring 2-D array with 3 rows
+        int arr[][] = new int[m][];
+        
+        // Creating a 2D array such that first row
+        // has 1 element, second row has two
+        // elements and so on.
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = new int[i + 1];
+
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = i;
+
+                System.out.print(arr[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+    }
+}
