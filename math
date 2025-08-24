@@ -1,1 +1,52 @@
+Count digits:
 
+Test.java:10: error: illegal start of expression
+   public static int countdigits(int n){
+   ^
+Test.java:23: error: <identifier> expected
+            System.out.print(countdigits(n));
+                            ^
+Test.java:23: error: <identifier> expected
+            System.out.print(countdigits(n));
+                                        ^
+Test.java:25: error: class, interface, enum, or record expected
+}
+^
+4 errors
+
+
+public static void main(String args[]){
+   ...
+   public static int countdigits(int n){  // ❌ Not allowed here
+
+
+your code has a method declared inside another method, which is not allowed in Java.
+
+In Java, you cannot define a method inside main() or any other method. All methods must be declared at the class level.
+
+-----------------
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Please enter the number n");
+        
+        int n=sc.nextInt();
+        System.out.print(countdigits(n));
+            }
+       
+   public static int countdigits(int n){
+            
+            if(n==0){
+                return 1;
+            }
+             int count=0;
+            while(n!=0){
+                n=n/10;
+                count++;
+                }
+            return count;
+            }
+            
+}   
