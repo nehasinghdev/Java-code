@@ -1,0 +1,42 @@
+import java.util.*;
+public class Test{
+    //reverse number
+    
+    
+    
+    //reverse=reverse*10+temp%10;
+    
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number n");
+        int n=sc.nextInt();
+       
+     
+          if(pllindrome(n) ==true){
+        System.out.println("yes");
+        
+    }
+    
+    else{
+        System.out.println("No");
+        
+    }
+        
+    }
+    
+    public static boolean pllindrome(int n){
+        
+        
+         int reverse=0;
+            int temp=n;
+        
+        
+        while(n!=0){
+            reverse=reverse*10+n%10;
+            n=n/10;
+            }
+            
+            return(reverse==temp);
+        
+        
+    }
