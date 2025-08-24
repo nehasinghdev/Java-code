@@ -1,0 +1,53 @@
+Using sorting:
+Below is the idea to solve the problem:
+
+Sort the array so that all occurrences of every element become consecutive. Once the occurrences become consecutive, then traverse the sorted array and count distinct elements by comparing the consecutive elements.
+
+
+Follow the steps below to Implement the idea:
+
+Initialize a res variable with 0 and sort arr[].
+Run a for loop from 0 to N-1.
+While i is less than N-1 and arr[i] is equal to arr[i+1] increment i.
+increment res by one. 
+
+
+
+Return res.
+
+
+
+// Java program to count all distinct elements
+// in a given array
+import java.util.Arrays;
+
+class Test {
+
+    static int countDistinct(int arr[], int n)
+    {
+        // First sort the array so that all
+        // occurrences become consecutive
+        Arrays.sort(arr);
+
+        // Traverse the sorted array
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+
+            // Move the index ahead while
+            // there are duplicates
+            while (i < n - 1 && arr[i] == arr[i + 1]) {
+                i++;
+            }
+            res++;
+        }
+        return res;
+    }
+
+    // Driver code
+    public static void main(String[] args)
+    {
+        int arr[] = { 6, 10, 5, 4, 9, 120, 4, 6, 10 };
+        int n = arr.length;
+        System.out.println(countDistinct(arr, n));
+    }
+}
