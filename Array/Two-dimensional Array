@@ -1,0 +1,25 @@
+// Java Code to print a Two-dimensional Array
+class Test {
+    public static void main(String[] args) {
+
+        // Initializing a 2D array with 2 rows and 2 columns
+        int[][] arr = { 
+            { 1, 2 },  // First row
+            { 3, 4 }   // Second row
+        };
+          
+        // Outer loop iterates over the rows of the 2D array
+        for (int i = 0; i < 2; i++) {
+
+            // Inner loop iterates over the columns of the current row
+            for (int j = 0; j < 2; j++) {
+                
+                // Printing each element in the row with a space
+                System.out.print(arr[i][j] + " ");
+            }
+
+            // New line after printing all columns in the current row
+            System.out.println();
+        }
+    }
+}
