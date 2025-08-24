@@ -1,0 +1,44 @@
+//Need to check the array error
+
+import java.util.*;
+public class Test{
+    static  void maxelement(int a, int n){
+        
+        int max=Integer.MIN_VALUE;
+         
+        for( i=0;i<a.length;i++){
+           if(a[i]>max){
+               max=a[i];
+           }
+        }
+         System.out.println(max);
+    }
+    public static void main(String args[]){
+        
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=sc.nextInt();
+        //remember sysntax
+        int a[]=new int[n];
+        
+        for(int i=0;i<n;i++){
+            //remember this
+             a[i]=sc.nextInt();
+        }
+        System.out.println(a);
+        
+    }}
+
+
+eeror: 
+
+https://stackoverflow.com/questions/21691551/for-loop-gets-error-illegal-start-of-type
+
+https://www.baeldung.com/java-class-interface-enum-expected
+
+https://stackoverflow.com/questions/4934412/java-compile-error-reached-end-of-file-while-parsing
+
+
+
+
+    
