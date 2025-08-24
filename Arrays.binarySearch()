@@ -1,0 +1,38 @@
+import java.util.*;
+import java.util.Arrays;
+
+public class Test{
+    public static void main(String args[]){
+        
+       char chararr[]={'a','b','c','d','e','f'};
+        byte  bytearr[]={1,2,3,4,5,6};
+        
+        float floatarr[]={1.2f,2.3f,3.7f,4.8f,5.9f,6.8f};
+        short   shortarr[]={1,2,3,4,5,6};
+        int   intarr[]={1,2,3,4,5,6};
+        double  doublearr[]={10.2,20.8,30.6,40.3};
+        
+        Arrays.sort(chararr);
+        Arrays.sort(bytearr);
+        Arrays.sort(floatarr);
+        Arrays.sort(shortarr);
+        Arrays.sort(intarr);
+        Arrays.sort(doublearr);
+        
+        
+        char charkey='g';
+        byte  bytekey=8;
+        float floatkey=10.8f;
+        short shortkey=2;
+        int   intkey=6;
+        double  doublekey=10.3;
+        
+        
+        System.out.println("the value of key is :" +Arrays.binarySearch( chararr,charkey));
+        System.out.println("the value of key is :"  + Arrays.binarySearch(  bytearr,bytekey));
+        System.out.println("the value of key is :" + Arrays.binarySearch( floatarr,floatkey));
+        System.out.println("the value of key is :" +  Arrays.binarySearch( shortarr,shortkey));
+        System.out.println("the value of key is :" +  Arrays.binarySearch(intarr,intkey));
+        System.out.println("the value of key is :" + Arrays.binarySearch( doublearr,doublekey));
+        
+      }}
