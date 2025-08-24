@@ -1,0 +1,35 @@
+trailing zeros
+
+import java.util.*;
+
+public class Test{
+    public static void main(String args[]){
+        int n=78;
+        
+        System.out.println(trailzeros(n));
+        
+    }
+    
+    static int trailzeros(int n){
+        int count=0;
+        for(int i=5;n/i>=1; i *= 5){
+            count += n / i;
+        }
+        return count;
+    }
+    
+    
+}
+
+
+
+
+----explaination:
+
+78/5  = 15
+78/25 =  3
+78/125=  0
+----------------
+Total = 18
+-------------------
+	
