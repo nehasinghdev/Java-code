@@ -1,0 +1,23 @@
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        List l=new ArrayList();
+        l.add(5);
+        l.add(7);
+        l.add(11);
+        l.add(14);
+        l.add(15);
+        
+        
+        System.out.println(l);
+        
+      //Collections.binarySearch(l, 167);
+
+      
+       int  index = Collections.binarySearch(l, 167);
+       
+        System.out.println(index);
+    }
+}
+
