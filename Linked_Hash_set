@@ -1,0 +1,384 @@
+A LinkedHashSet is an ordered version of HashSet that maintains a doubly-linked List across all elements. When the iteration order is needed to be maintained this class is used
+
+LinkedHashSet lets us iterate through the elements in the order in which they were inserted
+
+Syntax:
+ 
+
+LinkedHashSet<String> hs = new LinkedHashSet<String>(); 
+
+Contains unique elements only like HashSet. It extends HashSet class and implements Set interface.
+
+Maintains insertion order.
+
+// Java program to demonstrate 
+// working of LinkedHashSet 
+import java.util.*; 
+
+class Test 
+{ 
+    public static void main(String[]args) 
+    { 
+        LinkedHashSet<Integer> set 
+        = new LinkedHashSet<Integer>(); 
+
+        // Adding keys into LinkedHashSet usind add() 
+        set.add(10); 
+        set.add(20); 
+        set.add(30); 
+        
+        // Traversing the set 
+        for(Integer x: set)
+            System.out.print(x + " ");
+    } 
+}
+
+
+
+
+
+-----
+
+When it comes to discussing differences between Set the firstmost thing that comes into play is the insertion order and how elements will be processed. 
+
+HashSet in java is a class implementing the Set interface, backed by a hash table which is actually a HashMap instance. This class permits the null element. 
+
+The class also offers constant time performance for the basic operations like add, remove, contains, and size assuming the hash function disperses the elements properly among the buckets while TreeSet is an implementation of the SortedSet interface which as the name suggests uses the tree for storage purposes where here the ordering of the elements is maintained by a set using their natural ordering whether or not an explicit comparator is provided.
+
+
+
+
+For operations like search, insert, and delete HashSet takes constant time for these operations on average. HashSet is faster than TreeSet. HashSet is Implemented using a hash table. TreeSet takes O(Log n) for search, insert and delete which is higher than HashSet. But TreeSet keeps sorted data.
+
+
+
+// Java program to demonstrate working of
+// TreeSet Class
+
+// Importing required classes
+import java.util.TreeSet;
+
+// Class
+class TreeSetDemo {
+
+    // Main driver method
+    public static void main(String[] args)
+    {
+        // Create an empty TreeSet
+        TreeSet<String> tset = new TreeSet<String>();
+
+        // Adding elements to HashSet
+        // using add() method
+        tset.add("geeks");
+        tset.add("for");
+        tset.add("practice");
+        tset.add("contribute");
+
+        // Duplicate elements being removed
+        tset.add("geeks");
+
+        // Displaying TreeSet elements
+        System.out.println("TreeSet contains: ");
+      
+        for (String temp : tset) {
+            System.out.println(temp);
+        }
+    }
+}
+
+
+
+
+--------
+
+
+
+Print distinct elements in Java
+
+
+Given an array of integers, the task is to print the distinct elements present in the array. The output should include each element only once, maintaining the order of their first appearance.
+
+
+
+Naive Approach
+The simplest way to solve this problem is by using two nested loops. For each element, we check whether it has appeared before. If it hasn't, we print it.
+
+
+import java.util.*;
+
+public class GFG {
+    static void printDist(int arr[]) {
+        for(int i = 0; i < arr.length; i++) {
+            boolean flag = false;
+            for(int j = 0; j < i; j++) {
+                if(arr[i] == arr[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag == false) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+
+    public static void main(String[] argv) {
+        int arr[] = {10, 8, 10, 10, 7};
+        printDist(arr);
+    }
+}
+
+
+
+This solution runs in O(n²) time complexity.
+
+
+-----------
+
+Efficient Approach using HashSet
+
+
+
+To improve efficiency, we can use a HashSet. The HashSet stores only unique values and provides an average time complexity of O(1) for contains() and add() operations.
+
+
+
+import java.util.*;
+
+public class GFG {
+    static void printDist(int arr[]) {
+        HashSet<Integer> s = new HashSet<Integer>();
+        for(int i = 0; i < arr.length; i++) {
+            if(!s.contains(arr[i])) {
+                System.out.print(arr[i] + " ");
+                s.add(arr[i]);
+            }
+        }
+    }
+
+    public static void main(String[] argv) {
+        int arr[] = {10, 8, 10, 10, 7};
+        printDist(arr);
+    }
+}
+
+We iterate through the array and check if an element is already in the HashSet.
+If it is not, we print it and add it to the HashSet.
+This solution runs in O(n) time complexity and uses O(n) extra space.
+
+
+---------
+
+Print repeating elements in Java
+
+Given an array of integers, the task is to print the repeating elements present in the array. Repeating elements are those that appear more than once.
+
+import java.util.*;
+
+public class GFG {
+    static void printRepeating(int arr[]) {
+        for(int i = 1; i < arr.length; i++) {
+            boolean flag = false;
+            for(int j = 0; j < i; j++) {
+                if(arr[i] == arr[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag == true) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+
+    public static void main(String[] argv) {
+        int arr[] = {10, 8, 10, 8};
+        printRepeating(arr);
+    }
+}
+
+
+The solution has O(n²) time complexity.
+
+------------------
+
+import java.util.*;
+
+public class GFG {
+    static void printRepeating(int arr[]) {
+        HashSet<Integer> s = new HashSet<Integer>();
+        for(int i = 0; i < arr.length; i++) {
+            if(s.contains(arr[i])) {
+                System.out.print(arr[i] + " ");
+            } else {
+                s.add(arr[i]);
+            }
+        }
+    }
+
+    public static void main(String[] argv) {
+        int arr[] = {10, 8, 10, 8};
+        printRepeating(arr);
+    }
+}
+
+
+This solution runs in O(n) time complexity and uses O(n) extra space.
+
+
+----------------
+
+Intersection of two Arrays in Java
+
+
+Naive Approach
+The simplest way to solve this problem is by using two nested loops. For each element in the first array, we check whether it exists in the second array.
+
+
+import java.util.*;
+
+public class GFG {
+    static void intersection(int a[], int b[]) {
+        for(int i = 0; i < a.length; i++) {
+            boolean flag = false;
+            for(int j = 0; j < b.length; j++) {
+                if(a[i] == b[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag == true) {
+                System.out.print(a[i] + " ");
+            }
+        }
+    }
+
+    public static void main(String[] argv) {
+        int arr1[] = {10, 15, 20, 25, 30, 50};
+        int arr2[] = {30, 5, 15, 80};
+        intersection(arr1, arr2);
+    }
+}
+
+
+The solution has O(m*n) time complexity.
+
+
+---
+
+Efficient Approach using HashSet:
+
+A more efficient approach is to use a HashSet. The HashSet stores all elements of the second array and allows for O(1) lookup time when checking for common elements
+
+
+import java.util.*;
+
+public class GFG {
+    static void printIntersect(int a[], int b[]) {
+        HashSet<Integer> s = new HashSet<Integer>();
+        
+        for(int i = 0; i < b.length; i++) {
+            s.add(b[i]);
+        }
+        
+        for(int i = 0; i < a.length; i++) {
+            if(s.contains(a[i])) {
+                System.out.print(a[i] + " ");
+            }
+        }
+    }
+
+    public static void main(String[] argv) {
+        int arr1[] = {10, 15, 20, 25, 30, 50};
+        int arr2[] = {30, 5, 15, 80};
+        printIntersect(arr1, arr2);
+    }
+}
+
+
+This solution runs in O(n + m) time complexity and uses O(n) extra space.
+
+
+
+
+-----
+
+
+Pair Sum in Java
+
+
+Naive Approach
+A simple way to solve this problem is by using two nested loops. For each element, check whether there exists another element in the array that forms the required sum.
+
+
+import java.util.*;
+
+public class GFG {
+    static boolean isPair(int arr[], int sum) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == sum) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] argv) {
+        int arr[] = {3, 2, 8, 15, -8};
+        int sum = 17;
+        System.out.println(isPair(arr, sum) ? "Yes" : "No");
+    }
+}
+
+
+Explanation:
+The outer loop picks an element.
+The inner loop checks whether there exists another element that sums up to the target.
+If a valid pair is found, return true; otherwise, return false
+
+
+-------
+
+
+import java.util.*;
+
+public class GFG {
+    static boolean isPair(int arr[], int sum) {
+        HashSet<Integer> s = new HashSet<Integer>();
+        for (int i = 0; i < arr.length; i++) {
+            if (s.contains(sum - arr[i])) {
+                return true;
+            }
+            s.add(arr[i]);
+        }
+        return false;
+    }
+
+    public static void main(String[] argv) {
+        int arr[] = {3, 2, 8, 15, -8};
+        int sum = 17;
+        System.out.println(isPair(arr, sum) ? "Yes" : "No");
+    }
+}
+
+
+
+Iterate through the array.
+Check if sum - current element exists in the HashSet.
+If found, return true.
+Otherwise, add the current element to the HashSet and continue.
+If no pair is found, return false.
+
+
+----
+
+
+HashSet is an unordered & unsorted collection of the data set, whereas the LinkedHashSet is an ordered and sorted collection of HashSet. 
+
+
+The addAll() method combines all elements from both sets to perform a union operation.
+
+
+
