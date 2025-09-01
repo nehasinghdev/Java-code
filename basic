@@ -1,0 +1,185 @@
+1. SWapping of two numbers:
+
+class Test{
+    public static void main(String args[]){
+        int a=10;
+        int b=5;
+        int temp=0; - islo kuch intiliazation dena adega
+        temp=a; -------- remeber temp me dalna h
+        a=b;
+        b=temp;
+        
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+
+
+
+-----------------
+Widening or implicit conversion
+
+
+class Test{
+    public static void main(String args[]){
+        int i=10;
+
+
+        // directly assigning this values to the bigger datatypes
+
+        float j=i;
+        double k=j; 
+        
+
+
+        System.out.println(i);
+        System.out.println(j);
+        System.out.println(k);
+    }
+}
+
+
+---------------------
+
+narrowing or explicit conversion
+
+class Test{
+    public static void main(String args[]){
+
+    //assigning to smaller values
+
+        double  i=10.98766554;
+        float j=(float)i;
+        int k=(int)i;
+        System.out.println(i);
+        System.out.println(j);
+        System.out.println(k);
+    }
+}
+
+
+
+----------------
+
+
+
+Scanner class for taking input: 
+
+
+
+import java.util.Scanner;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+       
+        String s = sc.nextLine();// Remember this it is next Line
+
+
+        System.out.println("The input is string:"+s);
+        int x=sc.nextInt(); //after nexteverything will be capital
+
+        System.out.println("the input is integer:"+x);
+
+        float f=sc.nextFloat();
+
+        System.out.println("the input is float:"+f);
+         System.out.println("the \"input \"is float:");
+
+         //if you want to add any literal or string add escape sequence before it like \
+    }
+}
+
+------------------------------
+
+For taking the character : char c=sc.next().charAt(0);
+
+
+
+import java.util.*;
+//important to add this class
+
+class Test{
+    
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    String s=sc.nextLine();
+    char c=sc.next().charAt(0);
+    
+    // here you need to give character value
+
+    int i=sc.nextInt();
+    float f=sc.nextFloat();
+    long mobile=sc.nextLong();
+    System.out.println("this is string:"+s);
+    System.out.println("this is char:"+c);
+    System.out.println("this is integer:"+i);
+    System.out.println("this is float:"+f);
+    System.out.println("this is mobile:"+mobile);
+    
+    }
+}
+
+-------------------------------------
+
+
+
+Operators:
+
+1. Airhmetic operators:
+
+class Test{
+    public static void main(String args[]){
+        int a=10; int b=20;
+        System.out.println(a*b);
+        System.out.println(a+b);
+        System.out.println(a-b);
+        System.out.println(b*a);
+    }
+}
+
+
+---------------------------------------------------------
+2. comparison operators
+class Test{
+    
+    public static void main(String args[]){
+        
+        int x=10,y=20;
+        System.out.println(x==y);
+        System.out.println(x!=y);
+
+        you have to compare with the not value
+
+        System.out.println(x!=y);
+        System.out.println(x>y);
+        System.out.println(x<y);
+        System.out.println(x>=y);
+        System.out.println(x<=y);
+    }
+}
+
+
+-------------------------------------------------
+
+
+3. Bitwise operators:
+
+class Test{
+    public static void main(String args[]){
+        
+        int x=3, y=6;
+        System.out.println(x&y);
+        System.out.println(x|y);
+        System.out.println(x^y);
+    }
+}
+
+
+
+
+-------------------------------------
+
+
+
+
+
