@@ -1,0 +1,151 @@
+Hello World program:
+
+public class Test{
+    public static void main(String []args){
+    System.out.println("hello World");
+        
+    }
+}
+
+
+
+-----
+
+Give string in double quotes, if you will give in single quotes it will give error.
+-------
+
+Datatypes and Variables
+
+2. class Test{
+    public static void main(String args[]){
+        int a=56;
+        String n= "neha ";
+        float f= 4;
+        System.out.println(a);
+        System.out.println(f);
+        System.out.println(n);
+    }
+    
+}
+
+3.
+    Note: Give character in single quotes
+
+    code:
+
+    class GFG{
+    public static void main(String args[]){
+        char c='A';--- it should be in single quotes
+        int i=3;
+        float f=4.5678f; // float should end with f
+        double d=3.456789;
+        byte b=4;
+        short s=56;
+        long l=567584847;
+
+        // Append string with datatype using +
+
+        System.out.println("char+:"+c);
+        System.out.println("int:"+i);
+        System.out.println("float:"+ f);
+        System.out.println("double:"+d);
+        System.out.println("byte+:"+b);
+        System.out.println("short" +s);
+        System.out.println("long+:" +l);
+}}
+
+
+
+
+Errors: ERROR!
+/tmp/orFcq4Mb9d/Main.java:2: error: cannot find symbol
+    public static void main(Strig args[]){
+                            ^
+  symbol:   class Strig
+  location: class GFG
+ERROR!
+/tmp/orFcq4Mb9d/Main.java:3: error: incompatible types: String cannot be converted to char
+        char c="A";
+               ^
+2 errors
+ERROR!
+error: compilation failed
+
+=== Code Exited With Errors ===
+
+
+
+-----------------------------------------
+
+non primitive data types:
+
+class Point{
+    int x;
+    int y;
+}
+class Test{
+    public static void main(String args[]){
+    Point p=new Point();
+    p.x=10;
+    p.y=20;
+    System.out.println(p.x + "" + p.y );
+    
+}}
+
+ERROR!
+error: can't find main(String[]) method in class: Point
+
+=== Code Exited With Errors ===
+
+
+--------------------------------------------------
+
+---
+
+Declaration of same varaiable x
+
+// class Test declaration
+
+
+class Test{
+
+// Main Method
+
+    public static void main(String args[]){
+
+    // integer declaration 
+
+    See first declare the values then initilaises the value. you cannot initialize two times
+
+        int x;
+        for( x=0;x<5;x++){
+            System.out.println(x);
+        }
+         System.out.println(x);
+    }
+}
+
+
+----------------------------------------------------
+
+// Printing values from 1 to 20 an dthen initializing values of theb same variable
+
+
+class Test{
+    public static void main(String args[]){
+        for(int i=0;i<20;i++){
+            System.out.println(i);
+        }
+        int i = 30;
+         System.out.println(i);
+    }
+}
+
+
+-------------------------------------------------------------
+
+
+
+
+
+
