@@ -1,0 +1,302 @@
+Switch with string:
+
+class Test{
+    public static void main(String args[]){
+        String str="two";
+
+        // remember to assign the string
+
+        switch(str){
+
+        // keyword switch should be in small letters.
+        //str keyword should be given
+
+
+            case "one":
+                System.out.println("one");
+                break;
+
+             case "two":
+                System.out.println("two");
+                break;
+
+            case "three":
+                System.out.println("three");
+                break;
+
+            case "four":
+                System.out.println("four");
+                break;
+
+            default:
+                  System.out.println("no matter");
+        }
+}}
+
+
+
+-----
+
+if else;
+
+// number is even or odd
+
+
+import java.util.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n%2==0){
+            System.out.println("even");
+        }
+        else{
+             System.out.println("odd");
+        }
+        
+    }
+}
+
+-------------------------------------------------
+
+//sum of numbers else through the number is invalid
+import java.util.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n<0)
+            System.out.println("Invalid Input");
+        else
+            System.out.println(n*(n+1)/2);
+        
+        
+    }
+}
+--------------------------------------
+
+
+
+if else in java:
+
+
+// Decide if input number is positive negative positive odd negative even negative odd or zero
+
+import java.util.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int n=sc.nextInt();
+        if(n>=0){
+            if(n==0){
+                System.out.println("number is zero");
+            }
+            if(n%2==0){
+                System.out.println("number is positive even");
+            }
+            else{
+                System.out.println("number is positive odd");
+            }
+            
+            
+        }
+        else{
+         if(n%2==0){
+                System.out.println("number is negative even");
+            }
+            else{
+                System.out.println("number is negative odd");
+            }
+    
+        }
+}}
+
+
+Note: Make sure the string should be in capital letters.
+----------------------------------------------------------------------
+
+// Switch case for Left Right UP Down
+
+import java.util.*;
+class switchCase{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        char move=sc.next().charAt(0); ------
+        // very important
+        int x=0;int y=0;
+
+        
+        switch(move)
+        {
+            case 'L':
+                x++;
+                System.out.println(x);
+                break;
+                 
+             case 'R':
+                x--;
+                 System.out.println(x);
+                break;
+             case 'U':
+                y++;
+                 System.out.println(y);
+                break;
+             case 'D':
+                y--;
+                 System.out.println(y);
+                break;
+                
+            default:
+            System.out.println("invalid input");
+                
+        }
+    }
+}
+
+----------------------------------
+//largest of three numbers
+
+import java.util.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Enter number a, b, c");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        
+        //give proper condition with greater than equal to value and having and condition
+
+        if(a>=b && a>=c){
+
+
+            System.out.print("The greatest number is a");
+        }
+
+        //else if should be separated
+
+
+        else if(b>=c && b>=a){
+         System.out.print("The greatest number is b"); 
+        }
+
+        else{
+        System.out.print("The greatest number is c"); 
+        }
+            
+        }
+        
+    }
+
+
+    -----------------------------------------
+    
+other method :
+
+Please find the greatest number
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the numbers");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+
+        rememebr this method:
+
+
+        int ans_1=Math.max(a,b);
+        int ans=Math.max(ans_1,c);
+        System.out.println(ans);
+    }
+}
+
+
+------------------------------------------
+
+//leap year
+
+logic : 
+1. A year is a leap year if the following conditions are satisfied: 
+
+The year is multiple of 400.
+The year is multiple of 4 and not multiple of 100.
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the leap year");
+        int n=sc.nextInt();
+        if(n%4==0 && n%100!=0){
+            System.out.println(" leap year");
+        }
+       else if(n%400==0){
+            System.out.println(" leap year");
+        }
+        
+        else {
+            System.out.println(" No");
+        }
+        
+    }
+}
+
+----------------------|
+
+
+Algorithm :
+
+1. Take two numbers and the operator as inputs.
+2. Use nested if/else statements to write the logic for the operations.
+3. Print the result as per the operation.
+
+
+//Calculator
+
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        
+         System.out.println("Enter the value of a");
+         System.out.println("Enter the value of b");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        
+        System.out.println("Enter the operation 1. addition, 2. substraction, 3. multiplication, 4.division");
+        int op=sc.nextInt();
+        
+        if(op==1){
+            System.out.println(a+b);
+        }
+       else if(op==2){
+            System.out.println(a-b);
+        }
+        
+       else (op==3){
+            System.out.println(a*b);
+        }
+        
+       
+       else{
+           System.out.println("Invalid Input");
+       }
+        
+    }
+}
+
+
+
+-------------------------------
+
+
+
+
+
+
