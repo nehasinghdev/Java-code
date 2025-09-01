@@ -1,0 +1,71 @@
+Set Interface in Java:
+
+The set interface present in the java.util package and extends the Collection interface is an unordered collection of objects in which duplicate values cannot be stored. It is an interface which implements the mathematical set. This interface contains the methods inherited from the Collection interface and adds a feature which restricts the insertion of the duplicate elements.
+
+The Set interface is the sub-interface of Collection Interface. It is mainly implemented by 3 general-purpose classes namely:
+
+TreeSet : Mainly implements Red-Black Tree which is a self-balancing binary tree. Objects are stored in sorted order.
+
+HashSet : Implements Hashing for quick search, insertion and delete operations. The objects that we insert into the HashSet does not guarantee to be inserted in the same order.
+
+LinkedHashSet : Derived class of HashSet. Facilitates access of elements in insertion order.
+
+
+Declaration: 
+
+Set<Integer> set = new HashSet<> ();
+
+
+
+--
+
+To implement operations like ceil(), floor(), higher(), lower(), we need to use a TreeSet.
+
+TreeSet can also implement a doubly ended queue and doubly ended priority queue for inserting or extracting max-min elements simultaneously. The TreeSet can perform all these operations in O(log n) time.
+
+Operations on Sets
+
+1. Union
+
+The union of two sets combines all the elements from both sets. Use the addAll() method to perform this operation.
+
+s1.addAll(s2);
+
+2. Intersection
+
+The intersection of two sets returns only the elements that are present in both sets. Use the retainAll() method to find the intersection.
+
+s1.retainAll(s2);
+
+3. Difference
+
+The difference of two sets removes all the elements from the first set that are present in the second set. Use the removeAll() method for this operation.
+
+s1.removeAll(s2);
+
+
+Removing Duplicates from a Specific Collection using HashSet:
+Set s = new HashSet();
+
+
+
+------------
+
+
+import java.util.*;
+public class Test{
+     public static void main(String args[]){
+         Set<Integer> s=new HashSet<Integer>();
+         s.add(7);
+          s.add(11);
+           s.add(17);
+            s.add(70);
+            
+            
+            System.out.println(s);
+     }
+ }
+
+
+
+ -----------------------------
