@@ -1,0 +1,45 @@
+Normal Arrays vs. ArrayList
+
+Normal Arrays:
+
+int[] java = new int[100];
+int[] arr = new int[n];
+
+Fixed size.
+
+Cannot grow dynamically.
+
+Memory is allocated at declaration.
+
+ArrayList:
+
+ArrayList<Integer> al = new ArrayList<Integer>();
+
+
+
+-------------------
+
+
+import java.util.*;
+public class Test{
+
+
+    public static void main(String args[]){
+
+    //  ArrayList<Integer> al = new ArrayList<Integer>();
+
+
+    //The ArrayList is created with Integer as its type. is non-primitive datatype
+
+        ArrayList<Integer> l=new ArrayList<Integer>();
+        l.add(5);
+        l.add(10);
+        l.add(15);
+        l.add(20);
+
+        System.out.println(l);
+    }
+}
+
+
+
