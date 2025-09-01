@@ -1,0 +1,364 @@
+Functions:
+
+public class Test{
+    public static void main(String args[]){
+        System.out.println("first call");
+        fun();
+        System.out.println(" call");
+    }
+    
+    // you must remember the syntax of the function
+    //public static should be there and void as this function not returning anything.
+    
+public static void fun(){
+       System.out.println("Last call"); 
+    }
+}
+
+--------------------------
+
+// Addition function without arguments.
+
+public class Test{
+    public static void main(String args[]){
+       add();
+       add();
+    }
+    public static void add(){
+        int x=7; int y=4;
+        System.out.println(x+y);
+    }
+    
+    
+}
+--------------------------------
+
+Function with the passing parameters and resturning results.
+
+
+//Get max of two numbers:
+
+public class Test{
+    public static void main(String args[]){
+        int x=8; int y=9;
+        //passing values of two numbers
+
+      System.out.println(max(8,9));
+    }
+    
+    // main function is created
+
+    public static int max(int x, int y){
+        if(x>y){
+            
+            System.out.println("the number is greater than y");
+            return x;
+        }
+        else{
+            
+            System.out.println("the number is greater than x"); 
+            return y;
+        }
+        
+        
+    }
+}
+
+------------------------------------------
+
+//as void type return so its the same x value.
+
+public class Test{
+    public static void main(String args[]){
+        int x=6;
+        add(x);
+        System.out.println(x);
+        
+    }
+    public static void add(int x){
+        x=x+5;
+        
+    }
+}
+
+------------------------------------------
+From my side:
+\
+
+class Point{
+        int x;
+        int y;
+    }
+    
+public class Test{
+    
+    public static void main(String args[]){
+        Point p=new Point();
+        p.x=5;
+        p.y=10;
+        
+        fun(p);
+        System.out.println(p.x + " " + p.y);
+    }
+    
+    public static void fun(Point p){
+        p.x=10;
+        p.y=10;
+        
+    }
+}
+
+From GFG:
+
+4. Methods with Object References
+When objects are passed as arguments, changes made inside the method affect the original object.
+
+// Java Program to show
+// Methods with Object References
+import java.math.*;
+import java.io.*;
+import java.util.*;
+
+class Point {
+    // Declaring two integer fields for x and y coordinates
+    int x;
+    int y;
+}
+
+public class Gfg { 
+    public static void main(String[] args) { 
+        // Creating a Point object
+        Point p = new Point();
+        
+        // Assigning values to the coordinates
+        p.x = 5; 
+        p.y = 10;
+
+        // Calling the fun method and passing the Point object
+        fun(p);
+        
+        // Printing the updated coordinates of p
+        System.out.println(p.x + " " + p.y);
+    } 
+    
+    // fun method that modifies the fields of the passed Point object
+    public static void fun(Point p) {
+        // Modifying the fields of Point object p
+        p.x = 10; 
+        p.y = 10;
+    }
+}
+
+
+
+----------------------------
+
+5. Passing Objects by Reference vs. Reassigning Objects
+
+
+If an object reference is reassigned inside a method, it does not affect the original object.
+
+// Java Program to show
+// Passing Objects by Reference vs. Reassigning Objects
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+class Point {
+    // Declaring two integer fields for x and y coordinates
+    int x;
+    int y;
+}
+
+public class Gfg {
+    public static void main(String[] args) {
+        // Creating a Point object
+        Point p = new Point();
+
+        // Assigning values to the coordinates
+        p.x = 5;
+        p.y = 10;
+
+        // Calling the fun method and passing the Point
+        // object
+        fun(p);
+
+        // Printing the unchanged coordinates of p
+        System.out.println(p.x + " " + p.y);
+    }
+
+    // fun method that creates a new Point object and
+    // modifies it
+    public static void fun(Point p) {
+        // Creating a new Point object
+        p = new Point();
+
+        // Modifying the new Point object
+        p.x = 10;
+        p.y = 10;
+    }
+}
+
+
+
+
+-------
+
+Method using parameter types
+
+
+
+//First digit of number
+
+import java.util.*;
+public class Test{
+    public static int fd(int n){
+        while(n>10){
+       // MOST IMPORTANT  n=n/10;
+        
+        }
+       return n; 
+    }
+    
+    public static void main(String args[]){
+     System.out.println("Enter the number");
+      Scanner sc=new Scanner(System.in);
+    // Enter the number
+
+    int n=sc.nextInt();
+
+     fd(n);// calling the function
+
+     System.out.println(fd(n));
+    }
+    
+    
+    
+}
+
+
+
+-----------------------------------------------
+
+
+
+//First digit of number
+
+import java.util.*;
+public class Test{
+    
+    
+    public static void main(String args[]){
+     System.out.println("Enter the number");
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+     fd(n);
+     System.out.println(fd(n));
+     
+    }
+    
+    
+    public static int fd(int n){
+     
+     
+     //using logatrtthum divide the number using the same digit as number of zeros
+     
+     
+     
+     int l=Math.max(1, (int) (Math.log10(Math.abs(number)))); 
+      //int pow=int(l);
+      int a=Math.pow(10,p);
+      int ans=n/a;
+        return ans;
+        
+      
+    }
+    
+    
+    
+    
+}
+
+
+
+*******
+
+internet code:
+
+public class Main {
+
+  public static void main(String args[]) {
+    int number = 623563;
+    int firstDigit = 0;
+    int lastDigit = 0;
+
+    // To find the last digit of the number
+    lastDigit = number % 10;
+
+    // To find the first digit of the number
+    // calculating the number of digits
+    int digits = Math.max(1, (int) (Math.log10(Math.abs(number)))); 
+    
+    // Dividing by 10**digits to get the last digit
+    firstDigit = (int) (number / (int) (Math.pow(10, digits)));
+    
+    System.out.println("The First digit of the given number is: " + firstDigit);
+    System.out.println("The Last digit of the given number is: " + lastDigit);
+  }
+}
+
+
+
+
+
+my solution:
+
+
+import java.util.*;
+public class Test{
+    
+    
+    public static void main(String args[]){
+     System.out.println("Enter the number");
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+     fd(n);
+     System.out.println(fd(n));
+     
+    }
+    
+    
+    public static int fd(int n){
+     
+     
+     //using logatrtthum divide the number using the same digit as number of zeros
+     
+     
+     
+     //int l=Math.max(1, (int) (Math.log10(Math.abs(number)))); 
+      int digits = Math.max(1, (int) (Math.log10(Math.abs(n)))); 
+      // Dividing by 10**digits to get the last digit
+   int firstDigit = (int) (n / (int) (Math.pow(10, digits)));
+      //int pow=int(l);
+     
+      //int ans=n/a;
+        return firstDigit;
+        
+      
+    }
+    
+    
+    
+    
+}
+
+
+-------
+
+
+
+
+
+
+
+
