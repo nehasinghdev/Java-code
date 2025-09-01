@@ -1,0 +1,311 @@
+factorial of number:
+
+logic: Factorial of a non-negative integer, is multiplication of all integers smaller than or equal to n.
+
+
+Time Complexity: O(n)- for for loop
+Auxiliary Space: O(1)
+
+//using while loop:
+
+class GfG {
+    public static void main(String[] args) {
+        int n = 6;
+        int i = 1;
+        while (n > 0) {
+            i = i * n;
+            n--;
+        }
+        System.out.println("Factorial of given number is "
+                           + i);
+    }
+}
+
+
+// for loop:
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=sc.nextInt();
+        int count =1;
+        for(int i=1;i<=n;i++){
+            count=count*i;
+        }
+        System.out.println(count);
+        
+    }
+}
+
+
+--------------------------------------
+
+
+GCD of 2 Numbers in Java
+
+GCD (Greatest Common Divisor) or HCF (Highest Common Factor) of two numbers is the largest positive number that divides both of them. 
+
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the two numbers for which you have to find GCD or HCF");
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        // take minimum of these two so that we don't need to the same
+        int l=Math.min(m,n); --- imp
+    int HCF=1;
+    for(int i=1;i<=l;i++){ // i should be less than l
+        if(m%i==0 && n%i==0){
+                HCF=i;
+        }
+  
+    }
+        System.out.println(HCF);  
+    }
+}
+
+
+---------------------------------------------------
+LCM (Least Common Multiple) of two numbers is the smallest number which can be divided by both numbers. 
+
+
+
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter two numbers");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+
+
+        important steps:
+
+        int max=Math.max(a,b);// in minimum case it should be max of the two numbers
+        int mul=a*b; // maximum multiplication of two numbers is possible
+        
+        // important for loop condition.
+
+        for(int i=max;i<=mul;i++ ){
+            if(i%a==0 && i%b==0){
+                System.out.println(i);
+            }
+        }
+        
+        
+    }
+}
+
+
+-------------------------------------------------------------
+
+
+All Divisors Of A Number in Java
+
+
+Given a natural number n, print all distinct divisors of it.
+
+import java.util.*;
+public class Test{
+    
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=sc.nextInt();
+        int i=1;
+        while(i<=n){
+            if(n%i==0){
+                System.out.print(i+" "); //to print in the same line as well as using space
+                }
+                 i++; // make sure this i++ should be after condition check
+        }
+        
+    }
+}
+
+
+
+
+The divisors of 12 are: 1 2 3 4 6 12 
+
+-----------------------------------------------------------
+
+Check for Prime in Java
+
+
+Given a positive integer, check if the number is prime or not. A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself. Examples of first few prime numbers are {2, 3, 5, ....}
+
+// A naive method based JAVA program
+// to check if a number is prime
+
+
+
+import java.util.*;
+public class Test{
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("this is the number");
+    int n=sc.nextInt();
+    boolean prime = true; // important to take boolean as it will print both the statements.
+    if(n<=1){
+        prime = false; /// for negative numbers it required
+    }
+    else{
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+             //System.out.println("the number is not prime");
+             prime=false;
+            break;
+        }
+       
+    }}
+    if(prime){ 
+
+    // very important to take this as it is not negative
+        
+     System.out.println("the number is prime"); 
+        
+    }
+     else{
+         System.out.println("the number is  not prime"); 
+     }
+       
+}}
+
+
+Time complexity: O(n) 
+Auxilary Space: O(1)
+
+
+
+Efficient Method :
+Iterate through all numbers from 2 to square root of n and for every number check if it divides n [because if a number is expressed as n = x*y and any of the x or y is greater than the root of n, the other must be less than the root value]. If we find any number that divides, we return false.
+
+
+import java.util.*;
+public class Test{
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("this is the number");
+    int n=sc.nextInt();
+    boolean prime = true; // important to take boolean as it will print both the statements.
+    if(n<=1){
+        prime = false; /// for negative numbers it required
+    }
+    else{
+    for(int i=2;i*i<=n;i++){
+
+    // Till the suare root of n it will reduce the number of iterations
+
+        if(n%i==0){
+             //System.out.println("the number is not prime");
+             prime=false;
+            break;
+        }
+       
+    }}
+    if(prime){
+        
+     System.out.println("the number is prime"); 
+        
+    }
+     else{
+         System.out.println("the number is  not prime"); 
+     }
+       
+}}
+
+Time complexity: O(sqrt(n)) 
+Auxilary Space: O(1)
+
+-------------
+Most efficient method:
+
+We will deal with a few numbers such as 1, 2, and 3, and the numbers which are divisible by 2 and 3 in separate cases.
+For the remaining numbers, we iterate from 5 to sqrt(n) and check for each iteration whether (that value) or (that value + 2) divides n or not and increment the value by 6 [because any prime can be expressed as 6n+1 or 6n-1].
+If we find any number that divides, we return false, else true
+
+
+import java.io.*;
+import java.util.*;
+
+class GfG {
+
+    public static void main(String[] args) {
+
+        int n = 1031;
+        boolean prime = true;
+        if (n == 1)
+            prime = false;
+
+        if (n == 2 || n == 3)
+            prime = true;
+
+        if (n % 2 == 0 || n % 3 == 0)
+            prime = false;
+
+        for (int i = 5; i * i <= n; i = i + 6) {
+            if (n % i == 0 || n % (i + 2) == 0)
+                prime = false;
+        }
+
+        System.out.println(prime);
+    }
+}
+
+
+
+Time complexity: O(sqrt(n)) 
+Auxilary Space: O(1)
+
+
+
+--------------------------------------------------------------------------
+
+Fibonacci numbers in Java:
+
+The Fibonacci numbers are the numbers in the following integer sequence.
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
+
+In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation
+
+Fn = Fn-1 + Fn-2
+
+with seed values 
+
+F0 = 0 and F1 = 1.
+
+
+public class fibonnaci {
+    public static void main(String[] args) {
+        int n = 9;
+
+        int a = 0, b = 1;
+        if (n == 1) {
+            System.out.print(a);// for only single digit fibinacci number
+        } 
+        else if (n == 2) {
+            System.out.print(a + " " + b); /// for printing two fibinaci number
+        } 
+        else {
+            System.out.print(a + " " + b + " ");// for printing three fibonnacci number
+            for (int i = 3; i <= n; i++) {
+                int c = a + b;
+                System.out.print(c + " ");
+                a = b;
+                b = c;
+            }
+        }
+    }
+}
+
+
+------------------------------------------------------
+
+
+
+
