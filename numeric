@@ -1,0 +1,159 @@
+// sum of n natural numbers
+
+import java.util.*;
+
+class Test{
+
+
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+
+int n=sc.nextInt();
+int sum=(n*(n+1))/2;
+// here bracket doesn't bracket doesn't matter
+System.out.println(sum);
+
+}}
+
+
+--------------------------------------
+//to get the last digit of the number
+
+import java.util.*;
+class Test{
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int y=Math.abs(n); // to get the absolute value
+    int lastdigit= y%10;
+
+    //always modulus by 10 gives last digit of number
+    System.out.println(lastdigit);
+    
+}}
+
+
+-------------------------------
+
+//Number of days before n days
+
+import java.util.*;
+class Test{
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int d=2;
+
+    // this can also be provided by the user
+
+    int x=n%7;
+    int day=x-d;
+    if(day>0){
+        System.out.println(day);
+    }
+    else{
+        System.out.println(day+7);
+    }
+    
+}}
+
+----------------------------------------------
+
+
+
+//A.p= a+(n-1)*d write with function
+
+import java.util.*;
+
+
+class Test{
+
+// main function should be in the class but not in real main class
+
+    public static int airthmetic(int n, int d, int a){
+           int ans= a+(n-1)*d;
+           return ans;
+       }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int n=sc.nextInt();
+        int d=sc.nextInt();
+        int output=airthmetic( n,  d, a);|
+
+        // you can pass this function as outrput also
+
+       System.out.println(output);
+       
+       
+        
+        
+    }
+}
+
+Time Complexity: O(1), the code will run in a constant time.
+Auxiliary Space: O(1), no extra space is required, so it is a constant.
+
+
+
+------------------------------------------------------------------
+
+
+ // G.P=a.r power n-1
+//Function used: Math.pow(r,n-1)
+//age int jarur lga dena kyuki output chaiye
+
+//using functions
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Test{
+    public static int GP(int a, int r, int n){
+        int ans=a*(int)(Math.pow(r,n-1));
+
+        // always put bracket after this so that the error will not occur
+
+        return ans;
+    }
+
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int a=sc.nextInt();
+    int r=sc.nextInt();
+    int n=sc.nextInt();
+    System.out.println(GP(a,r,n));
+}
+    
+}
+
+
+
+
+-----
+
+normal code:
+
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Test{
+    
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int a=sc.nextInt();
+    int r=sc.nextInt();
+    int n=sc.nextInt();
+    int ans=a*(int)(Math.pow(r,n-1));
+    System.out.println(ans);
+}
+    
+}
+
+Time complexity: O(log N) due to the inbuilt pow function.
+Auxiliary Space: O(1).
+
+--------
+
+
